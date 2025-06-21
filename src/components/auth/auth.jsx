@@ -1,16 +1,19 @@
 import { auth } from "../../../api/firebase";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 export const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+
   const logIn = async () => {
+
     try {
       await signInWithEmailAndPassword(auth, email, password);
       alert("Logged in!")
-      return <Navigate to="/"/>;
+      navigate("/")
     } catch (err) {
       console.error(err);
     }

@@ -9,7 +9,8 @@ export const Auth = () => {
   const logIn = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      return <Navigate to="/" replace />;
+      alert("Logged in!")
+      return <Navigate to="/"/>;
     } catch (err) {
       console.error(err);
     }

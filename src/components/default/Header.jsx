@@ -25,7 +25,7 @@ function Header({ isUserSigned }) {
   return (
     <div>
       <header className="font-['Inter'] flex items-center p-2 justify-between w-full bg-[#6845AA]">
-        <h1 className="text-xl font-bold text-white">InoAgenda</h1>
+        <h1 className="text-xl font-bold text-white">InoAgenda 0.1🦄</h1>
         <nav className="flex space-x-6 font-medium">
           <NavItem>
             <Link to="/" className="text-[#442063] hover:text-[#6845AA]">

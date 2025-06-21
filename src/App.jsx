@@ -12,35 +12,27 @@ function App() {
   const [isUserSigned, setIsUserSigned] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        setIsUserSigned(true);
-      } else {
-        setIsUserSigned(false);
-      }
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setIsUserSigned(!!user);
     });
 
     return () => unsubscribe();
-  }, []);
-
+  });
 
   return (
     <BrowserRouter>
       <div className="w-screen pr-2 pl-2 pt-2 pb-2">
-      <Header/>
+        <Header isUserSigned={isUserSigned} />
         <Routes>
-            <Route path="/" element={<Header isUserSigned={isUserSigned} />}/>
-            <Route index element={<Stats />} />
-            <Route
-              path="admin"
-              element={<StatsAdmin />}
-            />
-            <Route path="login" element={<Auth />} />
+          <Route path="/" element={<Stats />} />
+          <Route path="admin" element={<StatsAdmin />} />
+          <Route path="login" element={<Auth />} />
         </Routes>
         <Footer />
       </div>
     </BrowserRouter>
   );
 }
+
 
 export default App;

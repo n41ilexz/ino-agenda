@@ -32,11 +32,13 @@ function Header({ isUserSigned }) {
               Acasă
             </Link>
           </NavItem>
-          <NavItem>
-            <Link to="/admin" className="text-[#442063] hover:text-[#6845AA]">
-              Admin
-            </Link>
-          </NavItem>
+          {isUserSigned && (
+            <NavItem>
+              <Link to="/admin" className="text-[#442063] hover:text-[#6845AA]">
+                Admin
+              </Link>
+            </NavItem>
+          )}
           <NavItem>
             {isUserSigned ? (
               <button

@@ -9,9 +9,11 @@ export const Auth = () => {
   const logIn = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      return <Navigate to="/" replace />;
     } catch (err) {
       console.error(err);
     }
+    
   };
   const logout = async () => {
     try {

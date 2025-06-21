@@ -18,7 +18,7 @@
 .table-wrapper {
   overflow-x: auto;
   width: 100%;
-  max-width: 48rem; /* max-w-3xl */
+  max-width: fit-content; /* max-w-3xl */
 }
 
 .table {

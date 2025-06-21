@@ -18,7 +18,7 @@ function Stats() {
         // Sortează după puncte (descrescător) și ia primele 15
         const sortedData = filteredData
           .sort((a, b) => b.points - a.points) // Ordine descrescătoare!
-          .slice(0, 15);
+          .slice(0, 10);
 
         setMembersList(sortedData);
       } catch (err) {
@@ -31,7 +31,7 @@ function Stats() {
 
   return (
     <div className="container">
-      <h2 className="title">Top 15 membri</h2>
+      <h2 className="title">Top 10 membri</h2>
       <div className="table-wrapper">
         <table className="table">
           <thead>
